@@ -11,12 +11,12 @@ describe('POST /products', function () {
   beforeEach(function () { sinon.restore(); });
   it('Deve retornar status 201 quando for inserido um produto valido',async function() {
 
-    sinon.stub(ProductModel, 'findOne').resolves(ProductModel.build({
-      id: 5,
-      name: "Harpa de Dagda",
-      price: "15 peças de ouro",
-      orderId: 3
-    }))
+    // sinon.stub(ProductModel, 'findOne').resolves(ProductModel.build({
+    //   id: 5,
+    //   name: "Harpa de Dagda",
+    //   price: "15 peças de ouro",
+    //   orderId: 3
+    // }))
     sinon.stub(ProductModel, 'create').resolves(ProductModel.build(productsMock.createdProduct))
     const response = await chai.request(app).post('/products').send(productsMock.insertProduct);    
 
@@ -28,10 +28,10 @@ describe('POST /products', function () {
 
     expect(response.status).to.be.equal(400);
   });
-  it('Deve retornar status 404 quando inserido orderId invalido', async function(){
-    sinon.stub(ProductModel, 'findOne').resolves(null)
-    const response = await chai.request(app).post('/products').send(productsMock.invalidOrderProduct);    
+  // it('Deve retornar status 404 quando inserido orderId invalido', async function(){
+  //   sinon.stub(ProductModel, 'findOne').resolves(null)
+  //   const response = await chai.request(app).post('/products').send(productsMock.invalidOrderProduct);    
 
-    expect(response.status).to.be.equal(404);
-  })
+  //   expect(response.status).to.be.equal(404);
+  // })
 });

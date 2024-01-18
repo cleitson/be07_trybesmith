@@ -13,9 +13,9 @@ Promise<StatusResponse<ProductSequelizeModel>> => {
     return { status: 'BAD_REQUEST', data: { message: 'Dados inválidos' } };
   }
 
-  const order = await ProductModel.findOne({ where: { orderId } });
+  // const order = await ProductModel.findOne({ where: { orderId } });
   
-  if (!order) return { status: 'NOT_FOUND', data: { message: 'Dados inválidos' } };
+  // if (!order) return { status: 'NOT_FOUND', data: { message: 'Dados inválidos' } };
 
   const newProduct = await ProductModel.create({ name, price, orderId });
 
