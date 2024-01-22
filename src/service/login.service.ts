@@ -9,6 +9,7 @@ type Token = {
 
 const login = async (username:string, password: string):Promise<StatusResponse<Token>> => {
   const user = await UserModel.findOne({ where: { username } });
+  
   if (!user) {
     return {
       status: 'UNAUTHENTICATED', data: { message: 'Username or password invalid' } };

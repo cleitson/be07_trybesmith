@@ -25,8 +25,8 @@ const createdProduct = {
   orderId: 3
 }
 const invalidProduct = {
-  name: "Martelo de Thor",
   price: "30 peças de ouro",
+  orderId: 3
 }
 const invalidOrderProduct = {
   name: "Martelo de Thor",

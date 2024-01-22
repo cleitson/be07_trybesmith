@@ -9,9 +9,9 @@ const getAllProducts = async (): Promise<StatusResponse<ProductSequelizeModel[]>
 
 const insertProduct = async (name: string, price: string, orderId: number): 
 Promise<StatusResponse<ProductSequelizeModel>> => {
-  if (!name || !price || !orderId) {
-    return { status: 'BAD_REQUEST', data: { message: 'Dados inválidos' } };
-  }
+  // if (!name || !price || !orderId) {
+  //   return { status: 'BAD_REQUEST', data: { message: 'Dados inválidos' } };
+  // }
 
   // const order = await ProductModel.findOne({ where: { orderId } });
   
